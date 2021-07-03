@@ -9,7 +9,7 @@ export default function App() {
     <div className="App">
       <div className="top">
         <div className="top-left">
-          <img src={topLeft} alt="top image" />
+          <img src={topLeft} alt="top element" />
         </div>
         <div className="top-middle">
           <img src={topMiddle} alt="logo" />
@@ -19,7 +19,7 @@ export default function App() {
         </div>
       </div>
       <div className="bottom-left">
-        <img src={bottomLeft} alt="bottom image" />
+        <img src={bottomLeft} alt="bottom element" />
       </div>
     </div>
   );
