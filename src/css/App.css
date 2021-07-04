@@ -2,6 +2,7 @@
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
+  overflow: hidden;
 }
 
 .top {
@@ -62,4 +63,30 @@
 
 .middle img {
   max-height: 65vh;
+}
+
+.loader {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+}
+
+.middle-button {
+  width: 170px;
+  height: 70px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  font-size: 22px;
+  background: #054358;
+  color: white;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 10px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.fade-button {
+  cursor: pointer;
 }
