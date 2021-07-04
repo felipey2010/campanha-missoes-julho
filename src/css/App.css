@@ -61,6 +61,18 @@
   left: 45%;
 }
 
+.percentage {
+  position: absolute;
+  bottom: 4vh;
+  left: 43%;
+}
+
+.percentage h2 {
+  color: white;
+  font-weight: 800;
+  font-size: 45px;
+}
+
 .middle img {
   max-height: 65vh;
 }

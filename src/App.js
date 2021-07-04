@@ -96,6 +96,11 @@ export default function App() {
               </div>
             </div>
           </Fade>
+          {showReading && (
+            <div className="percentage">
+              <h2>0%</h2>
+            </div>
+          )}
         </>
       )}
     </div>
