@@ -13,6 +13,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [showButton, toggleButton] = useState(true);
   const [showMeter, toggleMeter] = useState(false);
+  const [showReading, toggleReading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,9 +31,18 @@ export default function App() {
     return () => clearTimeout(timer);
   }
 
+  function showReadingMeter() {
+    const timer = setTimeout(() => {
+      toggleReading(!showReading);
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }
+
   function handleClick() {
     toggleButton(!showButton);
     delay();
+    showReadingMeter();
   }
 
   return (
@@ -76,7 +86,14 @@ export default function App() {
           <Fade bottom opposite when={showMeter}>
             <div className="middle">
               {/* Thermometer color -- #5b7c4e */}
-              <img src={thermometer} alt="thermometer" />
+              <div className="middle-thermometer">
+                <div className="thermometer">
+                  <img src={thermometer} alt="thermometer" />
+                </div>
+                <div className="meter-background">
+                  <div className="meter-reader"></div>
+                </div>
+              </div>
             </div>
           </Fade>
         </>

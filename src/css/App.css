@@ -65,6 +65,50 @@
   max-height: 65vh;
 }
 
+.middle-thermometer {
+  white-space: nowrap;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thermometer,
+.meter-background {
+  display: flex;
+  justify-content: flex-end;
+  width: 75px;
+}
+
+.meter-background {
+  background-color: #afaba4;
+  margin-left: -100%;
+  width: 40px;
+  position: absolute;
+  top: 15px;
+  border-radius: 30px;
+  z-index: -1;
+  height: 43vh;
+}
+
+@media (max-height: 520px) {
+  .meter-background {
+    margin-left: -54%;
+    top: 9px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .meter-background {
+    margin-left: -230%;
+    width: 55px;
+  }
+}
+
+/* .thermometer img {
+  max-height: 65vh;
+} */
+
 .loader {
   position: absolute;
   top: 50vh;
@@ -90,3 +134,13 @@
 .fade-button {
   cursor: pointer;
 }
+/* 
+.meter-background {
+  height: 43vh;
+  width: 5vw;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  border-radius: 30px;
+  background-color: black;
+  background-color: #e4e4e4e6; */
