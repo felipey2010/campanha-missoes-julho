@@ -1,0 +1,86 @@
+/* Progress Bar style */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+  }
+  .progressbar-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border: 4px solid #01394c;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .progressbar-complete {
+      position: absolute;
+      left: 0;
+      top: 0px;
+      height: 100%;
+      background-color: #5225bd;
+      border-radius: 8px;
+      transition: width ease-in-out 0.1s;
+      animation: g 2500ms infinite ease-in-out;
+      z-index: 2;
+      .progressbar-liquid {
+        z-index: 1;
+        width: 70px;
+        height: 70px;
+        animation: g 2500ms infinite ease-in-out,
+          r 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+        position: absolute;
+        right: -5px;
+        top: -10px;
+        background-color: #075169;
+        border-radius: 40%;
+      }
+    }
+    .progress {
+      z-index: 2;
+      font-size: 30px;
+      font-weight: 700;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      height: 100%;
+      width: 0;
+      opacity: 0;
+      transition: width ease-in-out 0.1s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes g {
+  0% {
+    background-color: #01394c;
+  }
+  50% {
+    background-color: #036b8e;
+  }
+  100% {
+    background-color: #01394c;
+  }
+}
+
+@keyframes r {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}

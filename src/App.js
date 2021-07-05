@@ -5,15 +5,14 @@ import topRight from "./images/logo-cbrr.png";
 import topMiddle from "./images/logo.png";
 import bottomLeft from "./images/bottom-left.png";
 import bottomRight from "./images/right-bottom.png";
-import thermometer from "./images/thermometer.png";
 import Fade from "react-reveal/Fade";
 import { PulseLoader } from "react-spinners";
+import ProgressBar from "./component/ProgressBar";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [showButton, toggleButton] = useState(true);
   const [showMeter, toggleMeter] = useState(false);
-  const [showReading, toggleReading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,18 +30,9 @@ export default function App() {
     return () => clearTimeout(timer);
   }
 
-  function showReadingMeter() {
-    const timer = setTimeout(() => {
-      toggleReading(!showReading);
-    }, 700);
-
-    return () => clearTimeout(timer);
-  }
-
   function handleClick() {
     toggleButton(!showButton);
     delay();
-    showReadingMeter();
   }
 
   return (
@@ -84,25 +74,25 @@ export default function App() {
             </button>
           </Fade>
           <Fade bottom opposite when={showMeter}>
-            <div className="middle">
-              {/* Thermometer color -- #5b7c4e */}
-              <div className="middle-thermometer">
-                <div className="thermometer">
-                  <img src={thermometer} alt="thermometer" />
-                </div>
-                <div className="meter-background">
-                  <div className="meter-reader"></div>
-                </div>
+            {showMeter && (
+              <div className="middle">
+                <ProgressBar progress={20} showMeter={showMeter} />
               </div>
-            </div>
+            )}
           </Fade>
-          {showReading && (
-            <div className="percentage">
-              <h2>0%</h2>
-            </div>
-          )}
         </>
       )}
     </div>
   );
 }
+
+/*
+  Vertical Progress bar
+  https://codesandbox.io/s/mqo1r9wo4j?file=/src/VerticalProgress.jsx
+
+  Horizontal bar
+  https://codepen.io/juanigallo/pen/WNbZgmV
+
+
+
+*/
