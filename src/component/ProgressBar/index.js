@@ -6,7 +6,7 @@ export default function ProgressBar({ progress }) {
   const firstVal = progress - Math.floor(progress * 0.4);
   const secondVal = progress - Math.floor(progress * 0.1);
   // Had problems showing decimals so the text below shows when the percentage gets to what has been set
-  const finalVal = "19,16";
+  const finalVal = "38,38";
 
   function animateBar() {
     if (count < firstVal) {
@@ -47,7 +47,7 @@ export default function ProgressBar({ progress }) {
 
   return (
     <div className="container">
-      <h1>ALVÔMETRO</h1>
+      <h1 className="container-text">ALVÔMETRO</h1>
       <div className="progressbar-container">
         <div className="progressbar-complete" style={style}>
           <div className="progressbar-liquid"></div>
