@@ -76,7 +76,7 @@ export default function App() {
           <Fade bottom opposite when={showMeter}>
             {showMeter && (
               <div className="middle">
-                <ProgressBar progress={39} showMeter={showMeter} />
+                <ProgressBar progress={50} showMeter={showMeter} />
               </div>
             )}
           </Fade>
