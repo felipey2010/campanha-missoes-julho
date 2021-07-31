@@ -6,7 +6,7 @@ export default function ProgressBar({ progress }) {
   const firstVal = progress - Math.floor(progress * 0.4);
   const secondVal = progress - Math.floor(progress * 0.1);
   // Had problems showing decimals so the text below shows when the percentage gets to what has been set
-  const finalVal = "70,97";
+  const finalVal = "105,85";
 
   function animateBar() {
     if (count < firstVal) {
@@ -22,6 +22,7 @@ export default function ProgressBar({ progress }) {
       setTimeout(() => {
         const newStyle = {
           opacity: 1,
+          color: "#cddc39",
           width: `${count}%`,
           transition: "1s ease-in",
         };
@@ -32,6 +33,7 @@ export default function ProgressBar({ progress }) {
       setTimeout(() => {
         const newStyle = {
           opacity: 1,
+          color: "#ffeb11",
           width: `${count}%`,
         };
         setStyle(newStyle);
